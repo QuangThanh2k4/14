@@ -9,18 +9,19 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    
     @IBOutlet weak var table: UITableView!
     
-    struct Sunset {
+    struct restaurant {
         let title: String
         let imageName: String
       
     }
-    let data: [Sunset] = [
-        Sunset(title: "Little Creatures - Club Street", imageName: "food1"),
-        Sunset(title: "Yanti Nasi Padang", imageName: "food2"),
-        Sunset(title: "Tiong Bahru Bakery", imageName: "food3"),
-        Sunset(title: "Kitchen by Food Rebel" , imageName: "food4"),
+    let data: [restaurant] = [
+        restaurant(title: "Little Creatures - Club Street", imageName: "food1"),
+        restaurant(title: "Yanti Nasi Padang", imageName: "food2"),
+        restaurant(title: "Tiong Bahru Bakery", imageName: "food3"),
+        restaurant(title: "Kitchen by Food Rebel" , imageName: "food4"),
     ]
     
     
@@ -44,9 +45,51 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) ->
     CGFloat {
-        return 140
+        return 129 
     }
 }
+
+
+extension UIView {
+  
+  @IBInspectable var cornerRadius: CGFloat {
+    get {
+      return layer.cornerRadius
+    }
+    set {
+      layer.cornerRadius = newValue
+    }
+  }
+  
+  @IBInspectable var masksToBounds: Bool {
+    get {
+      return layer.masksToBounds
+    }
+    set {
+      layer.masksToBounds = newValue
+    }
+  }
+  
+  @IBInspectable var borderWidth: CGFloat {
+    get {
+      return layer.borderWidth
+    }
+    set {
+      layer.borderWidth = newValue
+    }
+  }
+  
+  @IBInspectable var borderColor: UIColor? {
+    get {
+      return UIColor(cgColor: layer.borderColor ?? UIColor.clear.cgColor)
+    }
+    set {
+      layer.borderColor = newValue?.cgColor
+    }
+  }
+  
+}
+
 
 
 
